@@ -2,9 +2,12 @@
 package org.firstinspires.ftc.teamcode;
 
 
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cRangeSensor;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 
 public class TeleOp extends LinearOpMode {
@@ -12,6 +15,7 @@ public class TeleOp extends LinearOpMode {
     /* Declare OpMode members. */
     DcMotor MS = null;
     DcMotor MD =null;
+    ModernRoboticsI2cRangeSensor rangeSensor = null;
 
     double powerX;
     double powerY;
@@ -24,6 +28,7 @@ public class TeleOp extends LinearOpMode {
 
         MS  = hardwareMap.get(DcMotor.class, "ms");
         MD = hardwareMap.get(DcMotor.class, "md");
+        rangeSensor = hardwareMap.get(ModernRoboticsI2cRangeSensor.class, "range_sensor");
 
 
         MS.setDirection(DcMotor.Direction.FORWARD);
@@ -69,6 +74,7 @@ public class TeleOp extends LinearOpMode {
             telemetry.addData("PowerX: ",  "%.2f", powerX);
             telemetry.addData("PowerY: ", "%.2f", powerY);
             telemetry.addData("TurnPower: ", "%.2f", turn);
+            telemetry.addData("Distance: ", "%.2f", rangeSensor.getDistance(DistanceUnit.CM));
             telemetry.update();
 
             // Pace this loop so jaw action is reasonable speed.
