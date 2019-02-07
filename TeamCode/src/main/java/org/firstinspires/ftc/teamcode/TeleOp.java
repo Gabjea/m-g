@@ -71,7 +71,6 @@ public class TeleOp extends LinearOpMode {
                 Directie.Miscare("stop",0,MS,MD);
             }
 
-
             telemetry.addData("PowerX: ",  "%.2f", powerX);
             telemetry.addData("PowerY: ", "%.2f", powerY);
             telemetry.addData("TurnPower: ", "%.2f", turn);
