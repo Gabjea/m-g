@@ -14,6 +14,15 @@ public class Directie {
                 MD.setPower(power);
                 break;
             }
+            case "stanga": {
+                MS.setPower(0);
+                MD.setPower(-power);
+            }
+
+            case "dreapta": {
+                MS.setPower(power);
+                MD.setPower(0);
+            }
 
             case "rotire_stanga":
             case "rotire_dreapta": {
