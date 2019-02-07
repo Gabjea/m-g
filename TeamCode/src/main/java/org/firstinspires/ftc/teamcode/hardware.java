@@ -32,7 +32,7 @@ public class hardware
         // Define and Initialize Motors
         MS  = hwMap.get(DcMotor.class, "ms");
         MD = hwMap.get(DcMotor.class, "md");
-        colorSensor    = hwMap.get(ModernRoboticsI2cColorSensor.class, "color_sensor");
+        colorSensor    = hwMap.get(ModernRoboticsI2cColorSensor.class, "sensor_culoare");
         MS.setDirection(DcMotor.Direction.FORWARD);
         MD.setDirection(DcMotor.Direction.REVERSE);
 
