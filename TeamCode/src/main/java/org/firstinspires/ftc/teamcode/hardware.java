@@ -2,6 +2,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cColorSensor;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -12,7 +13,7 @@ public class hardware
     public DcMotor MS = null;
     public DcMotor MD =null;
 
-    public ModernRoboticsI2cColorSensor colorSensor = null;
+    public ColorSensor colorSensor;
 
 
     /* local OpMode members. */
@@ -32,7 +33,7 @@ public class hardware
         // Define and Initialize Motors
         MS  = hwMap.get(DcMotor.class, "ms");
         MD = hwMap.get(DcMotor.class, "md");
-        colorSensor    = hwMap.get(ModernRoboticsI2cColorSensor.class, "sensor_culoare");
+        colorSensor    = hwMap.get(ColorSensor.class, "sensor_culoare");
         MS.setDirection(DcMotor.Direction.FORWARD);
         MD.setDirection(DcMotor.Direction.REVERSE);
 
