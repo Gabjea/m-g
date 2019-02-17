@@ -49,19 +49,17 @@ public class TeleOp extends LinearOpMode {
             powerX  =  gamepad1.left_stick_x;
             turn  =  gamepad1.right_stick_x;
 
-
             if(powerY > 0.3){
                 Directie.Miscare("fata",powerY,MS,MD);
             }else if(powerY < -0.3){
                 Directie.Miscare("spate",powerY,MS,MD);
             }else if(powerX > 0.3){
-                MD.setPower(-powerX);
+                Directie.Miscare("stanga",powerY,MS,MD);
             }else if(powerX < -0.3){
-                MS.setPower(powerX);
+                Directie.Miscare("dreapta",powerY,MS,MD);
             }else{
                 Directie.Miscare("stop",0,MS,MD);
             }
-
 
             if(turn > 0.3){
                 Directie.Miscare("rotire_stanga",turn,MS,MD);

@@ -60,20 +60,20 @@ public class m_g extends OpMode
     @Override
     public void loop() {
 
-        powerY = gamepad1.left_stick_y;
-        powerX = -gamepad1.right_stick_x;
+        powerY = gamepad1.left_stick_y; // puterea de pe axa Y a left stick-ului
+        powerX = -gamepad1.right_stick_x; // puterea de pe axa X a right stick-ului
 
-        if(powerY > 0.1){
+        if(powerY > 0.1){ // deplasarea in fata
             MS.setPower(-powerY);
             MD.setPower(powerY);
-        }else if(powerY < -0.1){
+        }else if(powerY < -0.1){ // deplasarea in spate
             MS.setPower(-powerY);
             MD.setPower(powerY);
-        }else if(powerX > 0.1){
+        }else if(powerX > 0.1){ // deplasarea in stanga
             MS.setPower(powerX);
-        }else if(powerX < -0.1){
+        }else if(powerX < -0.1){ // deplasarea in dreapta
             MD.setPower(powerX);
-        }else{
+        }else{ // oprire
             MS.setPower(0);
             MD.setPower(0);
         }

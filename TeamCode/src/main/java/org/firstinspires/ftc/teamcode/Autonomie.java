@@ -16,11 +16,10 @@ public class Autonomie extends LinearOpMode {
 
     public hardware  robot      = new hardware();
     public ElapsedTime runtime    = new ElapsedTime();
-    int red; // 0
-    int green; // 85
-    int blue; // 150
-    //int[][][] culoare = new int[red][green][blue];
-
+    int red=0; // 0
+    int green=0; // 85
+    int blue=0; // 150
+    int[] culoare;
     Directie Directie = new Directie();
     @Override
     public void runOpMode() {
@@ -41,13 +40,10 @@ public class Autonomie extends LinearOpMode {
             green = robot.colorSensor.green();
             blue = robot.colorSensor.blue();
 
-
-
-
             telemetry.addData("Red:",red);
             telemetry.addData("Green:",green);
             telemetry.addData("Blue:",blue);
-            telemetry.addData("Color:","[%d][%d][%d]",red,green,blue);
+            telemetry.update();
         }
     }
 }
