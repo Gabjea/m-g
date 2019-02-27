@@ -36,9 +36,20 @@ public class Autonomie extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
 
         while(opModeIsActive()) {
+            // albastru : red 40-70, green 50-75, blue 50
+            // -80
+            // negru : red 25-50, green 20-45, blue 17-35
+
             red = robot.colorSensor.red();
             green = robot.colorSensor.green();
             blue = robot.colorSensor.blue();
+
+            if(red>=40 && red<=70 && green>=50 && green <=75 && blue >=50 && blue<=80){
+                Directie.Miscare("fata",0.5,robot.MS,robot.MD);
+            }else if(red>75){
+                Directie.Miscare("spate",-1,robot.MS,robot.MD);
+            }
+
 
             telemetry.addData("Red:",red);
             telemetry.addData("Green:",green);
