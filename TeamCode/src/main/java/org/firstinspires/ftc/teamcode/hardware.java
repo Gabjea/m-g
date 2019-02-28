@@ -13,7 +13,7 @@ public class hardware
     public DcMotor MS = null;
     public DcMotor MD =null;
 
-    public ColorSensor colorSensor;
+    public ColorSensor sensorColor;
 
     /* local OpMode members. */
     HardwareMap hwMap           =  null;
@@ -29,7 +29,7 @@ public class hardware
         // Define and Initialize Motors
         MS = hwMap.get(DcMotor.class, "ms");
         MD = hwMap.get(DcMotor.class, "md");
-        colorSensor    = hwMap.get(ColorSensor.class, "sensor_culoare");
+        sensorColor= hwMap.get(ColorSensor.class, "sensor_culoare");
         MS.setDirection(DcMotor.Direction.FORWARD);
         MD.setDirection(DcMotor.Direction.REVERSE);
         // Set all motors to zero power
