@@ -10,10 +10,10 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class hardware
 {
     /* Public OpMode members. */
-    public DcMotor MS = null;
-    public DcMotor MD =null;
+    public DcMotor MS = null; // motorul stang
+    public DcMotor MD =null; // motorul drept
 
-    public ColorSensor sensorColor;
+    public ColorSensor sensorColor; // senzorul de culoare
 
     /* local OpMode members. */
     HardwareMap hwMap           =  null;

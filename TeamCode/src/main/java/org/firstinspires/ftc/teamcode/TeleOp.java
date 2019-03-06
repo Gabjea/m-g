@@ -29,7 +29,6 @@ public class TeleOp extends LinearOpMode {
 
         MS  = hardwareMap.get(DcMotor.class, "ms");
         MD = hardwareMap.get(DcMotor.class, "md");
-       // rangeSensor = hardwareMap.get(ModernRoboticsI2cRangeSensor.class, "range_sensor");
 
 
         MS.setDirection(DcMotor.Direction.FORWARD);
@@ -45,27 +44,27 @@ public class TeleOp extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
 
-            powerY = gamepad1.left_stick_y;
-            powerX  =  gamepad1.left_stick_x;
-            turn  =  gamepad1.right_stick_x;
+            powerY = gamepad1.left_stick_y;  // valorile de pe axa OY a joystick-ului stang
+            powerX  =  gamepad1.left_stick_x; // valorile de pe axa OX a joystick-ului stang
+            turn  =  gamepad1.right_stick_x; // valorile de pe axa OX a joystick-ului drept
 
-            if(powerY > 0.3){
+            if(powerY > 0.3){ // robotul se misca in fata
                 Directie.Miscare("fata",powerY,MS,MD);
-            }else if(powerY < -0.3){
+            }else if(powerY < -0.3){ // robotul se misca in spate
                 Directie.Miscare("spate",powerY,MS,MD);
-            }else if(powerX > 0.3){
+            }else if(powerX > 0.3){ // robotul se roteste la stanga in jurul rotii stangi
                 Directie.Miscare("stanga",powerY,MS,MD);
-            }else if(powerX < -0.3){
+            }else if(powerX < -0.3){ // robotul se roteste la dreapta in jurul rotii drepti
                 Directie.Miscare("dreapta",powerY,MS,MD);
-            }else{
+            }else{ // robotul se opreste
                 Directie.Miscare("stop",0,MS,MD);
             }
 
-            if(turn > 0.3){
+            if(turn > 0.3){ // robotul se roteste pe loc la stanga
                 Directie.Miscare("rotire_stanga",turn,MS,MD);
-            }else if(turn < -0.3){
+            }else if(turn < -0.3){ // robotul se roteste pe loc la dreapta
                 Directie.Miscare("rotire_dreapta",turn,MS,MD);
-            }else{
+            }else{ // robotul se opreste
                 Directie.Miscare("stop",0,MS,MD);
             }
 
